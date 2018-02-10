@@ -14,7 +14,7 @@ public class UserSignUpActivity extends AppCompatActivity {
     EditText nameSignEditText=null;
     EditText passwordSignUpEditText=null;
     Button signInButton=null;
-
+    EditText phoneEditText=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,21 +23,25 @@ public class UserSignUpActivity extends AppCompatActivity {
         nameSignEditText=findViewById(R.id.nameSignEditText);
         passwordSignUpEditText=findViewById(R.id.passwordSignUpEditText);
         signInButton=findViewById(R.id.signInButton);
+        phoneEditText=findViewById(R.id.phoneEditText);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(usernameSignEditText.getText().toString().equals("")){
-                    usernameSignEditText.setError("Please enter Username");
+                    usernameSignEditText.setError("Please Enter Username");
                 }else if(nameSignEditText.getText().toString().equals("")){
-                    nameSignEditText.setError("Please enter Name");
+                    nameSignEditText.setError("Please Enter Name");
                 } else if (passwordSignUpEditText.getText().toString().equals("")) {
-                    passwordSignUpEditText.setError("Please enter Password");
+                    passwordSignUpEditText.setError("Please Enter Password");
+                }else if(phoneEditText.getText().toString().equals("")){
+                    phoneEditText.setError("Please Enter Phone Number");
                 }else{
                     String username= usernameSignEditText.getText().toString();
                     String name=nameSignEditText.getText().toString();
                     String password=passwordSignUpEditText.getText().toString();
+                    String phone=phoneEditText.getText().toString();
                     DataTransfer dataTransfer=new DataTransfer(UserSignUpActivity.this);
-                    dataTransfer.execute("user_SignUp",username,name,password);
+                    dataTransfer.execute("user_SignUp",username,name,password,phone);
                 }
 
             }

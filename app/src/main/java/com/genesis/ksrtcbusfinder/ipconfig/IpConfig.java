@@ -5,5 +5,5 @@ package com.genesis.ksrtcbusfinder.ipconfig;
  */
 
 public interface IpConfig {
-    String IP = "192.168.0.123:8080";
+    String IP = "192.168.43.217:8080";
 }

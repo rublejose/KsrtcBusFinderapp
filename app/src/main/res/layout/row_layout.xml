@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/slNoTextView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/whiteroundtext"
+        android:gravity="center"
+        android:text="no"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/busIdTextView"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/slNoTextView"
+        android:layout_alignTop="@+id/slNoTextView"
+        android:layout_toEndOf="@+id/slNoTextView"
+        android:background="@drawable/whiteroundtext"
+        android:gravity="center"
+        android:text="busid"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/busIdTextView"
+        android:layout_alignTop="@+id/busIdTextView"
+        android:layout_toEndOf="@+id/busIdTextView"
+        android:background="@drawable/whiteroundtext"
+        android:gravity="center"
+        android:text="time"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/timeTextView"
+        android:layout_alignTop="@+id/timeTextView"
+        android:layout_toEndOf="@+id/timeTextView"
+        android:background="@drawable/whiteroundtext"
+        android:gravity="center"
+        android:text="location"
+        android:textAlignment="center" />
+</RelativeLayout>

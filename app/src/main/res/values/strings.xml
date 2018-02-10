@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">KsrtcBusFinder</string>
+    <string-array name="bus_type">
+        <item>Ordinary</item>
+        <item>Limited Stop</item>
+        <item>Fast Passenger</item>
+        <item>Super Fast</item>
+    </string-array>
 </resources>

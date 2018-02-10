@@ -18,6 +18,7 @@ public class SplashActivity extends AppCompatActivity {
         Splash splash=new Splash();
         splash.execute();
 
+
     }
     class Splash extends AsyncTask<Void,Integer,Integer>{
         @Override
@@ -39,7 +40,7 @@ public class SplashActivity extends AppCompatActivity {
                 publishProgress(i);
                 i++;
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(40);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -50,6 +51,8 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Integer integer) {
             super.onPostExecute(integer);
+            Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+            startActivity(intent);
 
         }
     }

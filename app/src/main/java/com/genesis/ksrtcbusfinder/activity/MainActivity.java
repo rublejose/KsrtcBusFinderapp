@@ -1,5 +1,6 @@
 package com.genesis.ksrtcbusfinder.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.genesis.ksrtcbusfinder.R;
+import com.genesis.ksrtcbusfinder.task.DataTransfer;
 
 public class MainActivity extends AppCompatActivity {
     EditText usernameEditText=null;
@@ -22,16 +24,27 @@ public class MainActivity extends AppCompatActivity {
         usernameEditText=findViewById(R.id.usernameEditText);
         passwordEditText=findViewById(R.id.passwordEditText);
         newuserTextView=findViewById(R.id.newuserTextView);
+        newuserTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,UserSignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
         loginButton=findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(usernameEditText.getText().equals("")){
+                if(usernameEditText.getText().toString().equals("")){
                     usernameEditText.setError("please enter the name");
-                }else if (passwordEditText.getText().equals("")){
+                }else if (passwordEditText.getText().toString().equals("")){
                     passwordEditText.setError("please enter password");
                 }else{
-                    
+                    String username=usernameEditText.getText().toString();
+                    String password=passwordEditText.getText().toString();
+                    DataTransfer dataTransfer=new DataTransfer(MainActivity.this);
+                    dataTransfer.execute("user_login",username,password);
                 }
             }
         });

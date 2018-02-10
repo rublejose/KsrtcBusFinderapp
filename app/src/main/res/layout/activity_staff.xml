@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.genesis.ksrtcbusfinder.activity.StaffActivity">
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="52dp"
+        android:text="Staff Name:" />
+
+    <TextView
+        android:id="@+id/staffNameTextView"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/textView15"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/textView15"
+        android:gravity="bottom|left"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView15"
+        android:layout_below="@+id/textView15"
+        android:layout_marginTop="24dp"
+        android:text="Allotted Bus Id :" />
+
+    <TextView
+        android:id="@+id/busIdTextView"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/textView18"
+        android:layout_marginStart="14dp"
+        android:layout_toEndOf="@+id/textView18"
+        android:gravity="bottom|left"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView18"
+        android:layout_below="@+id/textView18"
+        android:layout_marginTop="22dp"
+        android:text="Departure Time : " />
+
+    <TextView
+        android:id="@+id/depTimeTextView"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/textView20"
+        android:layout_alignStart="@+id/busIdTextView"
+        android:layout_marginStart="14dp"
+        android:gravity="bottom|left"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/staffNameTextView"
+        android:layout_below="@+id/textView20"
+        android:layout_marginTop="98dp"
+        android:text="Please update stops" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/textView22"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/redroundbutton"
+        android:backgroundTint="@/redroundbutton"
+        android:text="update" />
+</RelativeLayout>
