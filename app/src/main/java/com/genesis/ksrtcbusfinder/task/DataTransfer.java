@@ -3,11 +3,13 @@ package com.genesis.ksrtcbusfinder.task;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.genesis.ksrtcbusfinder.activity.HomeActivity;
 import com.genesis.ksrtcbusfinder.activity.MainActivity;
+import com.genesis.ksrtcbusfinder.activity.StaffActivity;
 import com.genesis.ksrtcbusfinder.ipconfig.IpConfig;
 
 import org.json.JSONArray;
@@ -39,6 +41,7 @@ public class DataTransfer extends AsyncTask<String,Void,String> {
     String User_Login = "http://" + IpConfig.IP + "/ksrtc/user_login.php";
 
     String NAME;
+    String staff_id;
     String JSON_STRING="";
     public DataTransfer(Context context) {
         this.context = context;
@@ -54,8 +57,8 @@ public class DataTransfer extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... strings) {
         String task = strings[0];
         if (task.equals("user_login")){
-
             try {
+                staff_id=strings[1];
                 URL url = new URL(User_Login);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setDoInput(true);
@@ -127,6 +130,7 @@ public class DataTransfer extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String results) {
         try {
+
             JSONObject jsonObject = new JSONObject(results);
             JSONArray jsonArray = jsonObject.getJSONArray("server_response");
             JSONObject jsonObject1 = jsonArray.getJSONObject(0);
@@ -141,6 +145,12 @@ public class DataTransfer extends AsyncTask<String,Void,String> {
             }else if (code.equals("user_login_true")) {
                 Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity, HomeActivity.class);
+                intent.putExtra("user_id",staff_id);
+                activity.startActivity(intent);
+            } else if (code.equals("staff_login_true")) {
+                Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(activity, StaffActivity.class);
+                intent.putExtra("staff_id",staff_id);
                 activity.startActivity(intent);
             } else if (code.equals("user_login_false")) {
                 Toast.makeText(activity,message,Toast.LENGTH_SHORT).show();

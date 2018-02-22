@@ -5,7 +5,7 @@
     android:background="@color/colorPrimary">
 
     <TextView
-        android:id="@+id/slNoTextView"
+        android:id="@+id/slTextView"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignParentStart="true"
@@ -19,9 +19,9 @@
         android:id="@+id/busIdTextView"
         android:layout_width="120dp"
         android:layout_height="30dp"
-        android:layout_alignBottom="@+id/slNoTextView"
-        android:layout_alignTop="@+id/slNoTextView"
-        android:layout_toEndOf="@+id/slNoTextView"
+        android:layout_alignBottom="@+id/slTextView"
+        android:layout_alignTop="@+id/slTextView"
+        android:layout_toEndOf="@+id/slTextView"
         android:background="@drawable/whiteroundtext"
         android:gravity="center"
         android:text="busid"

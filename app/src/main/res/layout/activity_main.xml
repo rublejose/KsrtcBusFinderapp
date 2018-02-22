@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F44336"
+    android:background="@drawable/background_layout"
     tools:context="com.genesis.ksrtcbusfinder.activity.MainActivity">
 
     <TextView
@@ -73,10 +73,10 @@
     <TextView
         android:id="@+id/newuserTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="26dp"
         android:layout_toEndOf="@+id/textView5"
+        android:gravity="center"
         android:text="New User? Sign Up"
         android:textSize="14sp" />
 

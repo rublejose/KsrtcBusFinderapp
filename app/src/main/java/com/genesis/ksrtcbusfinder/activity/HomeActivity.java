@@ -3,6 +3,7 @@ package com.genesis.ksrtcbusfinder.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,8 @@ public class HomeActivity extends AppCompatActivity {
     Spinner destinationSpinner=null;
     Spinner busTypeSpinner=null;
     Button searchButton=null;
+    String username;
+    SharedPreferences sharedPreferences;
     ArrayList<StopModel> stopList=new ArrayList<StopModel>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,11 @@ public class HomeActivity extends AppCompatActivity {
         destinationSpinner=findViewById(R.id.destinationSpinner);
         busTypeSpinner=findViewById(R.id.busTypeSpinner);
         searchButton=findViewById(R.id.searchButton);
+        username=getIntent().getStringExtra("user_id");
+        sharedPreferences=getSharedPreferences("account_info",MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        editor.putString("username",username);
+        editor.commit();
         DataFetch dataFetch=new DataFetch(HomeActivity.this);
         dataFetch.execute("fetch_stops");
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +62,7 @@ public class HomeActivity extends AppCompatActivity {
                String destination=stopList.get(destinationSpinner.getSelectedItemPosition()).getStop_id();
                String type=busTypeSpinner.getSelectedItem().toString();
                 BusList busList =new BusList(HomeActivity.this);
+                Toast.makeText(HomeActivity.this, source+""+destination+""+type,Toast.LENGTH_SHORT).show();
                 busList.execute("bus_list",source,destination,type);
             }
         });

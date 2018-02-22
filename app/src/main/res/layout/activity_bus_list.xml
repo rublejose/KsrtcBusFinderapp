@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="com.genesis.ksrtcbusfinder.activity.BusListActivity">
 
     <TextView
-        android:id="@+id/slNoTextView"
+        android:id="@+id/slTextView"
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:layout_alignParentStart="true"
@@ -22,7 +23,7 @@
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/slNoTextView"
+        android:layout_toEndOf="@+id/slTextView"
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:text="Bus ID"
@@ -52,9 +53,9 @@
 
     <ListView
         android:id="@+id/busListView"
-        android:layout_width="match_parent"
-        android:layout_height="480dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp" />
+        android:layout_width="365dp"
+        android:layout_height="500dp"
+        android:layout_below="@+id/slTextView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_layout" />
 </RelativeLayout>

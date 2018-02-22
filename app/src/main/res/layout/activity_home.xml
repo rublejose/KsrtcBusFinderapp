@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F44336"
+    android:background="@drawable/background_layout"
     tools:context="com.genesis.ksrtcbusfinder.activity.HomeActivity">
 
     <TextView
@@ -35,7 +35,9 @@
         android:layout_height="50dp"
         android:layout_below="@+id/textView11"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/whiteroundtext" />
+        android:background="@drawable/whiteroundtext"
+        android:entries="@android:string/selectTextMode"
+        android:gravity="center_horizontal|center" />
 
     <TextView
         android:id="@+id/textView12"

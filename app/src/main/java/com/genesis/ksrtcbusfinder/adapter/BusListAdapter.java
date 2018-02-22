@@ -21,6 +21,7 @@ import java.util.List;
 
 public class BusListAdapter extends ArrayAdapter {
     List list=new ArrayList();
+    int i=1;
     public BusListAdapter(@NonNull Context context, int resource) {
         super(context, resource);
     }
@@ -55,6 +56,7 @@ public class BusListAdapter extends ArrayAdapter {
             busHolder.bus_id=row.findViewById(R.id.busIdTextView);
             busHolder.time=row.findViewById(R.id.timeTextView);
             busHolder.location=row.findViewById(R.id.locationTextView);
+            busHolder.sl=row.findViewById(R.id.slTextView);
             row.setTag(busHolder);
 
         }else{
@@ -64,9 +66,11 @@ public class BusListAdapter extends ArrayAdapter {
         busHolder.bus_id.setText(busListModel.getBus_id());
         busHolder.time.setText(busListModel.getTime());
         busHolder.location.setText(busListModel.getLocation());
+        busHolder.sl.setText(i+"");
         return row;
     }
     static class BusHolder{
-        TextView bus_id,time,location;
+        TextView bus_id,time,location,sl;
     }
+
 }
